@@ -12,6 +12,20 @@ namespace ConsultaPessoa.Models
         public String Bairro { get; set; }
         public String Cidade { get; set; }
         public String Estado { get; set; }
+        private EntTipoEndereco _TipoEndereco;
+        public EntTipoEndereco TipoEndereco
+        {
+            get
+            {
+                if (_TipoEndereco == null)
+                {
+                    _TipoEndereco = new EntTipoEndereco();
+                }
+                return _TipoEndereco;
+            }
+
+            set { _Cliente = value; }
+        }
         private EntCliente _Cliente;
         public EntCliente Cliente
         {

@@ -84,7 +84,7 @@ namespace ConsultaPessoa.Models
                     entReturn.IdCliente = (int)dtrDados["PK_CLIENTE"];
                     entReturn.Nome = dtrDados["TX_NOME"].ToString();
                     entReturn.Documento = dtrDados["TX_DOCUMENTO"].ToString();
-                    entReturn.Ativo = (Boolean)dtrDados["FL_IS_PESSOA_FISICA"];
+                    entReturn.IsPessoaFisica = (Boolean)dtrDados["FL_IS_PESSOA_FISICA"];
                     entReturn.Ativo = (Boolean)dtrDados["FL_ATIVO"];
                     listEntReturn.Add(entReturn);
                 }
