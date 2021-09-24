@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 
 namespace ConsultaPessoa.Models
 {
-    public class BllTelefone : BllBase
+    public class BllCliente : BllBase
     {
-        private DalTelefone dalTelefone = new DalTelefone();
+        private DalCliente dalCliente = new DalCliente();
 
-        public EntTelefone Inserir(EntTelefone objTelefone)
+        public EntCliente Inserir(EntCliente objCliente)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = db;
 
             try
             {
-                dalTelefone.Inserir(objTelefone, cmd);
+                dalCliente.Inserir(objCliente, cmd);
             }
             catch (Exception ex)
             {
@@ -29,17 +29,17 @@ namespace ConsultaPessoa.Models
                 db.Close();
             }
 
-            return objTelefone;
+            return objCliente;
         }
 
-        public void Alterar(EntTelefone objTelefone)
+        public void Alterar(EntCliente objCliente)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = db;
 
             try
             {
-                dalTelefone.Alterar(objTelefone, cmd);
+                dalCliente.Alterar(objCliente, cmd);
             }
             catch (Exception ex)
             {
@@ -51,15 +51,15 @@ namespace ConsultaPessoa.Models
             }
         }
 
-        public EntTelefone Remover(EntTelefone objTelefone)
+        public EntCliente Remover(EntCliente objCliente)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = db;
 
             try
             {
-                objTelefone.Ativo = !objTelefone.Ativo;
-                dalTelefone.Remover(objTelefone, cmd);
+                objCliente.Ativo = !objCliente.Ativo;
+                dalCliente.Remover(objCliente, cmd);
             }
             catch (Exception ex)
             {
@@ -70,19 +70,19 @@ namespace ConsultaPessoa.Models
                 db.Close();
             }
 
-            return objTelefone;
+            return objCliente;
         }
 
-        public List<EntTelefone> ObterTodos(Int32 IdCliente, Int32 Status)
+        public List<EntCliente> ObterTodos(Int32 IdCliente, Int32 Status)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = db;
 
-            List<EntTelefone> lstTelefone = new List<EntTelefone>();
+            List<EntCliente> lstCliente = new List<EntCliente>();
 
             try
             {
-                lstTelefone = dalTelefone.ObterTodos(IdCliente, Status, cmd);
+                lstCliente = dalCliente.ObterTodos(IdCliente, Status, cmd);
             }
             catch (Exception ex)
             {
@@ -93,19 +93,19 @@ namespace ConsultaPessoa.Models
                 db.Close();
             }
 
-            return lstTelefone;
+            return lstCliente;
         }
 
-        public EntTelefone ObterPorId(Int32 IdTelefone)
+        public EntCliente ObterPorId(Int32 IdCliente)
         {
-            EntTelefone objTelefone = new EntTelefone();
+            EntCliente objCliente = new EntCliente();
 
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = db;
 
             try
             {
-                objTelefone = dalTelefone.ObterPorId(IdTelefone, cmd);
+                objCliente = dalCliente.ObterPorId(IdCliente, cmd);
             }
             catch (Exception ex)
             {
@@ -116,7 +116,7 @@ namespace ConsultaPessoa.Models
                 db.Close();
             }
 
-            return objTelefone;
+            return objCliente;
         }
 
     }
