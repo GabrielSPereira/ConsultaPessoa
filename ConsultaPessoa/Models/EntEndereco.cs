@@ -24,7 +24,7 @@ namespace ConsultaPessoa.Models
                 return _TipoEndereco;
             }
 
-            set { _Cliente = value; }
+            set { _TipoEndereco = value; }
         }
         private EntCliente _Cliente;
         public EntCliente Cliente
